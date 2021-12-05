@@ -1,2 +1,2 @@
 # amatsumoto1.gihub.io
-My Person Website
+My Personal Website

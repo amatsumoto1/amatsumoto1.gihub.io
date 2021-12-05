@@ -1,0 +1,22 @@
+$nav-link-color: white;
+
+.header-nav {
+    ul {
+        list-style-type: none;
+        display: inline-table;
+    }
+
+    &__item {
+        float: left;
+        padding-right: 1rem;
+
+        a {
+            text-decoration: none;
+        }
+
+        a,
+        a:visited {
+            color: $nav-link-color;
+        }
+    }
+}

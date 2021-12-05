@@ -1,0 +1,19 @@
+import React from 'react';
+import Navbar from './Navbar';
+import NavItem from './NavItem';
+import './index.scss';
+
+const Header: React.VFC = () => {
+    return (
+        <header className='page-header'>
+            <Navbar>
+                <NavItem link='/' text='Home' />
+                <NavItem link='/' text='About' />
+                <NavItem link='/' text='Projects' />
+                <NavItem link='/' text='Contact' />
+            </Navbar>
+        </header>
+    )
+}
+
+export default Header;
