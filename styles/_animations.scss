@@ -1,0 +1,22 @@
+@import './variables';
+
+@keyframes changecolor-white-to-magenta {
+    0% {
+        color: $header-nav-link-color;
+    }
+    25% {
+        color: $header-nav-link-hover-25-pct-color;
+    }
+
+    50% {
+        color: $header-nav-link-hover-50-pct-color;
+    }
+
+    75% {
+        color: $header-nav-link-hover-75-pct-color;
+    }
+
+    100% {
+        color: $header-nav-link-hover-final-color;
+    }
+}

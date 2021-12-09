@@ -15,4 +15,8 @@ const NavItem: React.VFC<NavItemProps> = (props: NavItemProps) => {
     )
 }
 
+NavItem.defaultProps = {
+    link: '#'
+};
+
 export default NavItem;

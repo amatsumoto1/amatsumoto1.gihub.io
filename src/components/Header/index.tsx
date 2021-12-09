@@ -7,10 +7,10 @@ const Header: React.VFC = () => {
     return (
         <header className='page-header'>
             <Navbar>
-                <NavItem link='/' text='Home' />
-                <NavItem link='/' text='About' />
-                <NavItem link='/' text='Projects' />
-                <NavItem link='/' text='Contact' />
+                <NavItem link='#' text='Home' />
+                <NavItem link='#' text='About' />
+                <NavItem link='#' text='Projects' />
+                <NavItem link='#' text='Contact' />
             </Navbar>
         </header>
     )
