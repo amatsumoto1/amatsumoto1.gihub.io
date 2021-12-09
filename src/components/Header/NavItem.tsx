@@ -6,17 +6,15 @@ type NavItemProps = {
 }
 
 const NavItem: React.VFC<NavItemProps> = (props: NavItemProps) => {
+    const { link, text } = props;
+
     return (
         <li className="header-nav__item">
-            <a href={props.link}>
-                {props.text}
+            <a href={link}>
+                {text}
             </a>
         </li>
     )
 }
-
-NavItem.defaultProps = {
-    link: '#'
-};
 
 export default NavItem;
