@@ -1,10 +1,16 @@
 import React from 'react';
-import Canvas from '../Layout/Canvas';
+import Canvas from '../Canvas';
 import './index.scss';
 
 const BACKGROUND_COLOR = '#2E5175';
-const PARTICLE_COLOR1 = '#DACF77';
-const PARTICLE_COLOR2 = '#6DB495';
+const PARTICLE_COLORS = [
+    '#D788CB',
+    '#EEC3C3',
+    '#A7D3DA',
+    '#F0F5B6',
+    '#BBFAB2',
+    '#F7C78E'
+];
 
 type Particle  = {
     color: string,
@@ -14,12 +20,12 @@ type Particle  = {
     vy: number
 }
 
-const Background: React.FC = (props) => {
+const Background: React.VFC = () => {
     const particles: Particle[] = [];
 
     const createParticle =  (width: number, height: number): Particle => {
         return {
-            color: (Math.random() > 0.5 ? PARTICLE_COLOR1 : PARTICLE_COLOR2),
+            color: getRandomColor(),
             x: Math.random() * width,
             y: Math.random() * height,
             vx: getRandomDirection() * getRandomVelocity(),
@@ -28,7 +34,8 @@ const Background: React.FC = (props) => {
     }
 
     const initAllParticles = (width: number, height: number) => {
-        for (let i = 0; i < 100; i++) {
+        const totalParticles = getNumParticles(width, height);
+        for (let i = 0; i < totalParticles; i++) {
             particles.push(createParticle(width, height));
         }
     }
@@ -57,12 +64,13 @@ const Background: React.FC = (props) => {
 
     }
 
-    const drawCanvas = (context: CanvasRenderingContext2D, frameCount: number) => {
+    const drawCanvas = (context: CanvasRenderingContext2D, _: number) => {
         const canvas = context.canvas;
         
         canvas.width  = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
 
+        
         context.clearRect(0, 0, canvas.width, canvas.height);
         context.fillStyle = BACKGROUND_COLOR;
         context.fillRect(0, 0, canvas.width, canvas.height);
@@ -77,6 +85,22 @@ const Background: React.FC = (props) => {
         }
     }
 
+    const handleResize = (context: CanvasRenderingContext2D) => {
+        const { width, height } = context.canvas;
+        const totalParticles = getNumParticles(width, height);
+        const currentParticles = particles.length;
+        if (currentParticles > totalParticles) {
+            for (let i = currentParticles; i > totalParticles; i--) {
+                particles.pop();
+            }
+        }
+        else {
+            for (let i = currentParticles; i < totalParticles; i++) {
+                particles.push(createParticle(width, height));
+            }
+        }
+    }
+
     const getRandomVelocity = (): number => {
         return (Math.random() * 0.5 + 0.5);
     }
@@ -85,9 +109,19 @@ const Background: React.FC = (props) => {
         return (Math.random() > 0.5 ? 1 : -1);
     }
 
+    const getRandomColor = (): string => {
+        return PARTICLE_COLORS[Math.floor(Math.random() * PARTICLE_COLORS.length)];
+    }
+
+    const getNumParticles = (canvasWidth: number, canvasHeight: number) => {
+        const area = canvasWidth * canvasHeight;
+
+        return Math.ceil(area / 8000);
+    }
+
     return (
         <div className='background'>
-            <Canvas draw={drawCanvas} />
+            <Canvas draw={drawCanvas} handleResize={handleResize}/>
         </div>
     )
 }

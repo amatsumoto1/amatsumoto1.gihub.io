@@ -1,0 +1,17 @@
+@import '../../../styles/variables';
+
+.page-content {
+    background-color: $page-content-background-color;
+    color: white;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    width: 50%;
+
+    p {
+        line-height: 1.8rem;
+    
+        a, a:visited {
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@import '../../../styles/animations';
+
+.about-page {
+    &__header {
+        text-align: center;
+        font-size: 3rem;
+        &:hover {
+            animation: flip-text-x 2s linear 0s infinite;
+        }
+        
+    }
+}

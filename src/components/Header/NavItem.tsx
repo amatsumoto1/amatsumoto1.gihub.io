@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 type NavItemProps = {
     link: string,
@@ -10,9 +11,9 @@ const NavItem: React.VFC<NavItemProps> = (props: NavItemProps) => {
 
     return (
         <li className="header-nav__item">
-            <a href={link}>
+            <Link to={link}>
                 {text}
-            </a>
+            </Link>
         </li>
     )
 }
