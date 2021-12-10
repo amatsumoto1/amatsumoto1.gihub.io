@@ -3,6 +3,7 @@ import Canvas from '../../Canvas';
 import { getRandBetween, getRandSign } from '../../../utils/Random';
 
 const BACKGROUND_COLOR = '#2E5175';
+const BLACK_COLOR = '#000000';
 const SPIRAL_COLORS = [
     '#8E5E52',
     '#8E7F52',
@@ -32,7 +33,9 @@ const SpiralBackground: React.VFC = () => {
 
         context.moveTo(centerX, centerY);
         context.lineWidth = 10;
-        context.strokeStyle = color;
+        context.strokeStyle = BLACK_COLOR;
+        context.shadowBlur = 20;
+        context.shadowColor= color;
         context.beginPath();
 
         let radius = 0;
@@ -130,7 +133,7 @@ const SpiralBackground: React.VFC = () => {
     const getDefaultSpiralCount = (width: number, height: number) => {
         const area = width * height;
 
-        return Math.ceil(area / 400000 + 1);
+        return Math.ceil(area / 200000 + 1);
     }
 
     return (

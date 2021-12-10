@@ -4,12 +4,13 @@ import { getRandBetween, getRandSign } from '../../../utils/Random';
 
 const BACKGROUND_COLOR = '#2E5175';
 const PARTICLE_COLORS = [
-    '#D788CB',
-    '#EEC3C3',
-    '#A7D3DA',
-    '#F0F5B6',
-    '#BBFAB2',
-    '#F7C78E'
+    '#8E5E52',
+    '#8E7F52',
+    '#868E52',
+    '#5D8959',
+    '#598984',
+    '#686E8C',
+    '#927D8F'
 ];
 
 type Particle  = {
@@ -56,6 +57,8 @@ const ParticleBackground: React.VFC = () => {
     const drawParticle = (context: CanvasRenderingContext2D, particle: Particle) => {
         const { color, x, y } = particle;
         context.beginPath();
+        context.shadowBlur = 10;
+        context.shadowColor = color;
         context.arc(x, y, 5, 0, 2 * Math.PI);
         context.fillStyle = color;
         context.fill();
@@ -112,7 +115,7 @@ const ParticleBackground: React.VFC = () => {
     const getNumParticles = (canvasWidth: number, canvasHeight: number) => {
         const area = canvasWidth * canvasHeight;
 
-        return Math.ceil(area / 8000);
+        return Math.ceil(area / 5000);
     }
 
     return (
