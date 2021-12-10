@@ -1,9 +1,15 @@
 import { useRef, useEffect } from 'react';
 
-const useCanvas = (draw: (context: CanvasRenderingContext2D, frameCount: number) => void, onResize?: (context: CanvasRenderingContext2D) => void) => {
+export interface EventListeners {
+    onResize?: (context: CanvasRenderingContext2D) => void,
+    onClick?: (context: CanvasRenderingContext2D, event: MouseEvent) => void,
+    onMouseMove?: (context: CanvasRenderingContext2D, event: MouseEvent) => void,
+}
+
+const useCanvas = (draw: (context: CanvasRenderingContext2D, frameCount: number) => void, listeners: EventListeners) => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const canvasCtxRef = useRef<CanvasRenderingContext2D | null>(null);
-
+    const { onResize, onClick, onMouseMove } = listeners;
 
     useEffect(() => {
         if (canvasRef.current) {
@@ -29,20 +35,40 @@ const useCanvas = (draw: (context: CanvasRenderingContext2D, frameCount: number)
     }, [draw]);
 
     useEffect(() => {
-        if (onResize && canvasCtxRef.current) {
+        if (canvasCtxRef.current) {
+            let handlers: any = {};
+
             let ctx = canvasCtxRef.current;
 
-            const handleResize = () => {
-                onResize(ctx);
+            if (onResize) {
+                handlers['resize'] = () => {
+                    onResize(ctx);
+                }
+            }
+
+            if (onClick) {
+                handlers['click'] = (e: MouseEvent) => {
+                    onClick(ctx, e);
+                }
             }
             
-            window.addEventListener('resize', handleResize);
+            if (onMouseMove) {
+                handlers['mousemove'] = (e: MouseEvent) => {
+                    onMouseMove(ctx, e);
+                }
+            }
+
+            for (const eventName in handlers) {
+                window.addEventListener(eventName, handlers[eventName]);
+            }
         
             return () => {
-                window.removeEventListener('resize', handleResize);
+                for (const eventName in handlers) {
+                    window.removeEventListener(eventName, handlers[eventName]);
+                }
             };
         }
-    }, [onResize]);
+    });
 
     return canvasRef;
 }
