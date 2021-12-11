@@ -2,7 +2,7 @@ import React from 'react';
 import Canvas from '../../Canvas';
 import { getRandBetween, getRandSign } from '../../../utils/Random';
 
-const BACKGROUND_COLOR = '#2E5175';
+const BACKGROUND_COLOR = '#000000';
 const PARTICLE_COLORS = [
     '#8E5E52',
     '#8E7F52',
@@ -76,6 +76,7 @@ const ParticleBackground: React.VFC = () => {
         
         context.clearRect(0, 0, canvas.width, canvas.height);
         context.fillStyle = BACKGROUND_COLOR;
+        context.globalCompositeOperation = 'screen';
         context.fillRect(0, 0, canvas.width, canvas.height);
     
         if (!particles.length) {
@@ -115,7 +116,7 @@ const ParticleBackground: React.VFC = () => {
     const getNumParticles = (canvasWidth: number, canvasHeight: number) => {
         const area = canvasWidth * canvasHeight;
 
-        return Math.ceil(area / 5000);
+        return Math.ceil(area / 2000);
     }
 
     return (

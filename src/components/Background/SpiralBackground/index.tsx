@@ -2,22 +2,12 @@ import React from "react";
 import Canvas from '../../Canvas';
 import { getRandBetween, getRandSign } from '../../../utils/Random';
 
-const BACKGROUND_COLOR = '#2E5175';
-const BLACK_COLOR = '#000000';
-const SPIRAL_COLORS = [
-    '#8E5E52',
-    '#8E7F52',
-    '#868E52',
-    '#5D8959',
-    '#598984',
-    '#686E8C',
-    '#927D8F'
-];
+const BACKGROUND_COLOR = '#000000';
 
 type Spiral = {
     centerX: number,
     centerY: number,
-    color: string,
+    colorAngle: number,
     iter: number,
     maxIter: number,
     increasing: boolean,
@@ -29,13 +19,15 @@ const SpiralBackground: React.VFC = () => {
 
 
     const drawSpiral = (context: CanvasRenderingContext2D, spiral: Spiral) => {
-        const { centerX, centerY, color, iter, multiplier } = spiral;
+        const { centerX, centerY, iter, multiplier, colorAngle } = spiral;
+        const finalColorAngle = (colorAngle + multiplier * getRandBetween(0.5,2)) % 360;
+        spiral.colorAngle = finalColorAngle;
 
         context.moveTo(centerX, centerY);
         context.lineWidth = 10;
-        context.strokeStyle = BLACK_COLOR;
-        context.shadowBlur = 20;
-        context.shadowColor= color;
+        context.strokeStyle = `hsl(${finalColorAngle}, 30%, 15%)`;
+        context.shadowBlur = 10;
+        context.shadowColor= `hsl(${(finalColorAngle + getRandBetween(-2,2)) % 360}, 30%, 15%)`;
         context.beginPath();
 
         let radius = 0;
@@ -74,7 +66,7 @@ const SpiralBackground: React.VFC = () => {
         return {
             centerX: getRandBetween(10, width - 10),
             centerY: getRandBetween(10, height - 10), 
-            color: getRandomColor(),
+            colorAngle: getRandBetween(0, 360),
             iter: 1,
             maxIter: getRandBetween(1000, 4000),
             increasing: true,
@@ -117,17 +109,13 @@ const SpiralBackground: React.VFC = () => {
         spirals.push({ 
             centerX: x,
             centerY: y,
-            color: getRandomColor(),
+            colorAngle: getRandBetween(0, 360),
             iter: 1, 
             maxIter: getRandBetween(1000, 4000),
             increasing: true,
             multiplier: getRandSign()
             }
         );
-    }
-
-    const getRandomColor = (): string => {
-        return SPIRAL_COLORS[Math.floor(Math.random() * SPIRAL_COLORS.length)];
     }
 
     const getDefaultSpiralCount = (width: number, height: number) => {

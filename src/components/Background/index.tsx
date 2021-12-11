@@ -1,17 +1,19 @@
 import React from 'react';
 import SpiralBackground from './SpiralBackground';
 import ParticleBackground from './ParticleBackground';
+import ElectricBackground from './ElectricBackground';
 import './index.scss';
 
 
 const Background: React.VFC = () => {
     const BackgroundChoices = [
         < SpiralBackground />,
-        < ParticleBackground />
-    ]
+        < ParticleBackground />,
+        <ElectricBackground />
+    ];
 
     const chooseBackground = () : React.ReactNode => {
-        const number = Math.floor(Math.random() * 2);
+        const number = Math.floor(Math.random() * BackgroundChoices.length);
         return BackgroundChoices[number];
     }
 
