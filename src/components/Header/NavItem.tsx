@@ -9,9 +9,14 @@ type NavItemProps = {
 const NavItem: React.VFC<NavItemProps> = (props: NavItemProps) => {
     const { link, text } = props;
 
+    const onLinkClicked = (e: React.MouseEvent) => {
+        // Prevent the background canvas from reacting to clicking on link.
+        e.stopPropagation();
+    }
+
     return (
         <li className="header-nav__item">
-            <Link to={link}>
+            <Link to={link} onClick={onLinkClicked}>
                 {text}
             </Link>
         </li>
