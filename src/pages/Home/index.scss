@@ -1,2 +1,27 @@
+@import '../../../styles/variables';
+@import '../../../styles/animations';
+
 .home-page {
+    padding-top: $page-top-padding;
+    height: calc(100% - $header-height + $footer-height);
+    overflow: hidden;
+
+    &__wrapper {
+        padding: 2rem 1rem;
+    }
+
+    &__header {
+        text-align: center;
+        font-size: 3rem;
+        animation: float-upward-flip-y 3s linear 0s 1 forwards;
+
+        &__text {
+            border-radius: 3px;
+        }
+    }
+
+    &__subheader {
+        text-align: center;
+        animation: float-upward-flip-y-delay 5s linear 0s 1 forwards;
+    }
 }

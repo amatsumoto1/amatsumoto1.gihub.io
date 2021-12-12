@@ -7,5 +7,12 @@ $header-nav-link-hover-75-pct-color: #ff55ff;
 $header-nav-link-hover-final-color: #ff00ff;
 $background-default-color: #2E5175;
 $page-content-background-color: #263646AA;
+$footer-background-color: #88888888;
+
+/* Components sizes */
+$header-height: 3.375rem;
+$page-top-padding: $header-height + 2rem;
+$footer-height: 3.375rem;;
+$page-bottom-padding: $footer-height + 2rem;
 
 /* Screen Sizes */

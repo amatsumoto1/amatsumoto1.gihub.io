@@ -38,3 +38,24 @@
         transform: rotateX(360deg);
     }
 }
+
+@keyframes float-upward-flip-y {
+    0% {
+        transform: translateY(100vh) rotateY(0deg);
+    }
+    100% {
+        transform: translateY(0vh) rotateY(360deg);
+    }
+}
+
+@keyframes float-upward-flip-y-delay {
+    0% {
+        transform: translateY(100vh) rotateY(0deg);
+    }
+    50% {
+        transform: translateY(100vh) rotateY(0deg); 
+    }
+    100% {
+        transform: translateY(0vh) rotateY(360deg);
+    }
+}

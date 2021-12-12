@@ -1,7 +1,9 @@
 @import '../../../styles/variables';
 
 .page-header {
-    position: sticky;
+    position: fixed;
+    top: 0;
     width: 100%;
+    height: $header-height;
     background-color: $header-background-color;
 }

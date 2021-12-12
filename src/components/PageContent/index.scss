@@ -1,9 +1,11 @@
 @import '../../../styles/variables';
 
+$page-content-padding-top: calc($header-height + 2rem);
+
 .page-content {
     background-color: $page-content-background-color;
     color: white;
-    margin: 2rem auto;
+    margin: $page-content-padding-top auto 2rem;
     padding: 0 1rem;
     width: 50%;
 
