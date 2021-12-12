@@ -1,28 +1,40 @@
-import React from 'react';
+import React, { Fragment, useState } from 'react';
 import SpiralBackground from './SpiralBackground';
 import ParticleBackground from './ParticleBackground';
 import ElectricBackground from './ElectricBackground';
+import BackgroundSelector from './BackgroundSelector';
 import './index.scss';
 
 
-const Background: React.VFC = () => {
-    const BackgroundChoices = [
-        < SpiralBackground />,
-        < ParticleBackground />,
-        <ElectricBackground />
-    ];
+const BackgroundChoices: {[key: string]: React.ReactNode}  = {
+    spiral: < SpiralBackground />,
+    particle: < ParticleBackground />,
+    electric: < ElectricBackground />
+};
 
-    const chooseBackground = () : React.ReactNode => {
-        const number = Math.floor(Math.random() * BackgroundChoices.length);
-        return BackgroundChoices[number];
+const Background: React.VFC = () => {
+    const chooseRandomBackground = () : string => {
+        const backgroundNames = Object.keys(BackgroundChoices);
+        const index = Math.floor(Math.random() * backgroundNames.length);
+        return backgroundNames[index];
     }
 
-    const background = chooseBackground();
+    const [background, setBackground] = useState(chooseRandomBackground());
+
+    const onBackgroundSelected = (newBackground: string) => {
+        setBackground(newBackground);
+    }
 
     return (
-        <div className='background'>
-            { background }
-        </div>
+        <Fragment>
+            <div className='background'>
+                { BackgroundChoices[background] }
+            </div>
+                <BackgroundSelector
+                    backgrounds={Object.keys(BackgroundChoices)}
+                    onBackgroundSelect={onBackgroundSelected}
+                    active={background} />
+        </Fragment>
     )
 }
 
