@@ -3,7 +3,7 @@
 
 .home-page {
     padding-top: $page-top-padding;
-    height: calc(100% - $header-height + $footer-height);
+    height: calc(100% - $header-height - $footer-height);
     overflow: hidden;
 
     &__wrapper {
@@ -12,7 +12,7 @@
 
     &__header {
         text-align: center;
-        font-size: 3rem;
+        font-size: 2.5rem;
         animation: float-upward-flip-y 3s linear 0s 1 forwards;
 
         &__text {

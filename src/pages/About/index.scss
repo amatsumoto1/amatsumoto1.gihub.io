@@ -1,6 +1,8 @@
 @import '../../../styles/animations';
 
 .about-page {
+    padding-top: $page-top-padding;
+
     &__header {
         text-align: center;
         font-size: 3rem;

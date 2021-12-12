@@ -16,3 +16,5 @@ $footer-height: 3.375rem;;
 $page-bottom-padding: $footer-height + 2rem;
 
 /* Screen Sizes */
+$screen-size-sm-max: 480px;
+$screen-size-md-min: $screen-size-sm-max + 1;
