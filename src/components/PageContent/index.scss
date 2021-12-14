@@ -1,8 +1,10 @@
 @import '../../../styles/variables';
+@import '../../../styles//mixins';
 
 $page-content-padding-top: calc($header-height + 2rem);
 
 .page-content {
+    @include animation-fade-in(background-fade-in, 0, $fade-in-animation-time);
     background-color: $page-content-background-color;
     color: white;
     margin: $page-content-padding-top auto 2rem;
