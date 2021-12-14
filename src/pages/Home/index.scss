@@ -1,7 +1,10 @@
 @import '../../../styles/variables';
-@import '../../../styles/animations';
+@import '../../../styles/mixins';
+
+$fade-in-animation-time: 3s;
 
 .home-page {
+    @include animation-fade-in(background-fade-in, 0, $fade-in-animation-time);
     padding-top: $page-top-padding;
     height: calc(100% - $header-height - $footer-height);
     overflow: hidden;
@@ -11,9 +14,9 @@
     }
 
     &__header {
+        @include animation-fade-in(header-fade-in, 50, $fade-in-animation-time);
         text-align: center;
         font-size: 2.5rem;
-        animation: float-upward-flip-y 3s linear 0s 1 forwards;
 
         &__text {
             border-radius: 3px;
@@ -21,7 +24,7 @@
     }
 
     &__subheader {
+        @include animation-fade-in(sub-header-fade-in, 60, $fade-in-animation-time);
         text-align: center;
-        animation: float-upward-flip-y-delay 5s linear 0s 1 forwards;
     }
 }

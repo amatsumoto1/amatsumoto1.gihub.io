@@ -13,6 +13,7 @@
         border: 1px solid #83838388;
         font-size: 1.2rem;
         border-radius: 5px 5px 0 0;
+        cursor: pointer;
     }
 
     &__options-container {
@@ -26,12 +27,6 @@
         color: white;
         background-color: #88888888;
         font-size: 1.2rem;
-
-        option {
-            padding-left: 0.2rem;
-            padding-right: 0.2rem;
-            color: white;
-            background-color: #88888888;
-        }
+        cursor: pointer;
     }
 }
