@@ -150,13 +150,6 @@ const CheckeredBackground: React.VFC = () => {
         colorOffset = colorOffset === 0 ? 1 : 0;
     }
 
-    const isSlanted = (): boolean => {
-        return direction === Direction.TOP_RIGHT 
-            || direction === Direction.TOP_LEFT
-            || direction === Direction.BOTTOM_RIGHT
-            || direction === Direction.BOTTOM_LEFT;
-    }
-
     return (
         <Canvas draw={drawCanvas} />
     );
