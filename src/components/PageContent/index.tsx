@@ -1,10 +1,18 @@
 import React from 'react';
 import './index.scss';
 
-const PageContent: React.FC = (props) => {
+type PageContentProps = {
+    header: string,
+    children?: React.ReactNode
+}
+
+const PageContent: React.FC<PageContentProps> = ({header, children}: PageContentProps) => {
     return (
         <div className='page-content'>
-            { props.children }
+            <h1 className='page-content__header'>
+                <span className='page-content__header__text'>{header}</span>
+            </h1>
+            { children }
         </div>
     )
 }

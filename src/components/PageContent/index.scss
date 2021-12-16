@@ -1,5 +1,5 @@
 @import '../../../styles/variables';
-@import '../../../styles//mixins';
+@import '../../../styles/mixins';
 
 $page-content-padding-top: calc($header-height + 2rem);
 
@@ -16,7 +16,21 @@ $page-content-padding-top: calc($header-height + 2rem);
 
     @media screen and (min-width: $screen-size-md-min) {
         width: 50%;
-        padding: 0 1rem;
+        padding: 1rem 1.5rem 2rem;
+    }
+
+    &__header {
+        @include animation-fade-in(header-fade-in, 50, $fade-in-animation-time);
+        text-align: center;
+        font-size: 2.5rem;
+
+        &__text {
+            border-radius: 3px;
+        }
+    }
+
+    *:not(:first-child) {
+        @include animation-fade-in(page-content-fade-in, 60, $fade-in-animation-time);
     }
 
     p {

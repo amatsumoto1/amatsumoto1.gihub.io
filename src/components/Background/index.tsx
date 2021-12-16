@@ -3,13 +3,15 @@ import SpiralBackground from './SpiralBackground';
 import ParticleBackground from './ParticleBackground';
 import ElectricBackground from './ElectricBackground';
 import BackgroundSelector from './BackgroundSelector';
+import CheckeredBackground from './CheckeredBackground';
 import './index.scss';
 
 
 const BackgroundChoices: {[key: string]: React.ReactNode}  = {
     spiral: < SpiralBackground />,
     particle: < ParticleBackground />,
-    electric: < ElectricBackground />
+    electric: < ElectricBackground />,
+    checkered: <CheckeredBackground />
 };
 
 const Background: React.VFC = () => {
