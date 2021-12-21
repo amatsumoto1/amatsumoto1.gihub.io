@@ -15,23 +15,23 @@ const About : React.VFC = () => {
                 <section id="work-experience">
                     <Card title='Work Experience'>
                         <div className='job-info'>
-                            <h4>RLI Insurance, Software Engineer</h4>
+                            <h3>RLI Insurance, Software Engineer</h3>
                             <div>2021-Present</div>
                         </div>
                         <div className='job-info'>
-                            <h4>Boeing, RTOS Software Engineer II</h4>
+                            <h3>Boeing, RTOS Software Engineer II</h3>
                             <div>2018-2020</div>
                         </div>
                         <div className='job-info'>
-                            <h4>Boeing, Software Engineering Intern</h4>
+                            <h3>Boeing, Software Engineering Intern</h3>
                             <div>2016</div>
                         </div>
                         <div className='job-info'>
-                            <h4>Argon ST, Software Engineering Intern</h4>
+                            <h3>Argon ST, Software Engineering Intern</h3>
                             <div>2015</div>
                         </div>
                         <div className='job-info'>
-                            <h4>Cornell University, Teaching Assistant</h4>
+                            <h3>Cornell University, Teaching Assistant</h3>
                             <div>2015-2018</div>
                         </div>
                     </Card>

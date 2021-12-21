@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretRight, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import './index.scss';
 
 type CardProps = {
@@ -8,11 +10,21 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = (props: CardProps) => {
     const { title, children } = props;
+    const [expanded, setExpanded] = useState(true);
+
+    const toggleExpandCollapse = () => {
+        setExpanded(!expanded);
+    }
 
     return (
         <div className='card'>
-            <h3 className='card__header'>{title}</h3>
-            <div className='card__contents'>
+            <div className='card__header-container'>
+                <span className='card__expand-collapse' onClick={toggleExpandCollapse}>
+                    <FontAwesomeIcon icon={expanded ?  faCaretDown : faCaretRight }/>
+                </span>
+                <h2 className='card__header'>{title}</h2>
+            </div>
+            <div className={`card__contents ${expanded ? '' : 'card__contents--collapsed'}`}>
                 {children}
             </div>
         </div>

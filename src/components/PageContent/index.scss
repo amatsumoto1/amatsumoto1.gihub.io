@@ -29,7 +29,7 @@ $page-content-padding-top: calc($header-height + 2rem);
         }
     }
 
-    *:not(:first-child) {
+    > *:not(:first-child) {
         @include animation-fade-in(page-content-fade-in, 60, $fade-in-animation-time);
     }
 
