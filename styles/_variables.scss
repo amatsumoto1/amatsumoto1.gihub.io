@@ -1,23 +1,47 @@
 /* Colors */
-$header-background-color: #88888888;
+$clear-color: #00000000;
+
+/* Header */
+$header-background-color: #333333DD;
 $header-nav-link-color: white;
 $header-nav-link-hover-25-pct-color: #ffccff;
 $header-nav-link-hover-50-pct-color: #ff99ff;
 $header-nav-link-hover-75-pct-color: #ff55ff;
 $header-nav-link-hover-final-color: #ff00ff;
+
+/* Footer */
+$footer-background-color: #333333DD;
+
+/* Background */
 $background-default-color: #2E5175;
+
+/* Page */
 $page-content-background-color: #263646AA;
-$footer-background-color: #88888888;
+
+/* Card */
+$card-background-color: #18284688;
+$card-header-color: darken($card-background-color, 5%);
+$card-border-color: darken($card-background-color, 10%);
+
 
 /* Components sizes */
+
+/* Header */
 $header-height: 3.375rem;
+$header-link-right-padding: 1rem;
+
+/* Footer */
+$footer-height: 3.375rem;
+
+/* Page */
 $page-top-padding: $header-height + 2rem;
-$footer-height: 3.375rem;;
 $page-bottom-padding: $footer-height + 2rem;
+
 
 /* Screen Sizes */
 $screen-size-sm-max: 480px;
 $screen-size-md-min: $screen-size-sm-max + 1;
+
 
 /* Animation */
 $fade-in-animation-time: 3s;

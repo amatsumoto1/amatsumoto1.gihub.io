@@ -1,15 +1,12 @@
 @import '../../../styles/variables';
 
-$card-background-color: #18284688;
-$card-header-color: darken($card-background-color, 5%);
-$card-border-color: darken($card-background-color, 10%);
 
 $card-border-radius: 4px;
 
+$card-header-container-padding-right: 2.5rem;
 $card-header-padding: 0.5rem;
-$card-header-font-size: 1.3rem;
+$card-header-font-size: 1.2rem;
 
-$card-expand-collapse-margin-top: 1rem;
 $card-expand-collapse-margin-left: 1rem;
 
 $card-contents-horizontal-padding: 1rem;
@@ -23,13 +20,21 @@ $card-contents-bottom-padding: 0.5rem;
 
     &__header-container {
         display: flex;
+        padding-right: $card-header-container-padding-right;
         background-color: $card-header-color;
         font-size: $card-header-font-size;
     }
 
     &__expand-collapse {
-        margin-top: $card-expand-collapse-margin-top;
+        background-color: $clear-color;
+        font-size: $card-header-font-size;
         margin-left: $card-expand-collapse-margin-left;
+        border: none;
+        cursor: pointer;
+
+        svg {
+            color: white;
+        }
     }
 
     &__header {

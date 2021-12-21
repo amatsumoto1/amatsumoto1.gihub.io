@@ -9,7 +9,7 @@
 
     &__item {
         float: left;
-        padding-right: 1rem;
+        padding-right: $header-link-right-padding;
 
         a {
             text-decoration: none;

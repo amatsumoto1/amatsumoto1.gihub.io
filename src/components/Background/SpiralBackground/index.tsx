@@ -27,7 +27,7 @@ const SpiralBackground: React.VFC = () => {
         context.lineWidth = 10;
         context.strokeStyle = `hsl(${finalColorAngle}, 30%, 15%)`;
         context.shadowBlur = 10;
-        context.shadowColor= `hsl(${(finalColorAngle + getRandBetween(-2,2)) % 360}, 30%, 15%)`;
+        context.shadowColor= `hsl(${(finalColorAngle + getRandBetween(-2,2)) % 360}, 20%, 5%)`;
         context.beginPath();
 
         let radius = 0;

@@ -1,7 +1,7 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
-$page-content-padding-top: calc($header-height + 2rem);
+$page-content-padding-top: calc($header-height + 0.5rem);
 
 .page-content {
     @include animation-fade-in(background-fade-in, 0, $fade-in-animation-time);

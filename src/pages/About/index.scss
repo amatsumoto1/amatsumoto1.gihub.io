@@ -2,14 +2,6 @@
 
 .about-page {
     padding-top: $page-top-padding;
-
-    &__header {
-        text-align: center;
-        font-size: 3rem;
-        &:hover {
-            animation: flip-text-x 2s linear 0s 1;
-        }
-    }
 }
 
 .job-info {
