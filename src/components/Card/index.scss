@@ -1,0 +1,26 @@
+@import '../../../styles/variables';
+
+$card-header-color: darken($page-content-background-color, 10%);
+$card-background-color: darken($page-content-background-color, 5%);
+
+$card-header-padding: 0.5rem;
+$card-header-font-size: 1.5rem;
+
+$card-contents-horizontal-padding: 1rem;
+$card-contents-bottom-padding: 0.5rem;
+
+.card {
+    background-color: $card-background-color;
+    color: white;
+
+    &__header {
+        background-color: $card-header-color;
+        padding: $card-header-padding;
+        font-size: $card-header-font-size;
+        text-align: center;
+    }
+
+    &__contents {
+        padding: 0 $card-contents-horizontal-padding $card-contents-bottom-padding;
+    }
+}
