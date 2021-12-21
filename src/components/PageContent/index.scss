@@ -4,7 +4,6 @@
 $page-content-padding-top: calc($header-height + 0.5rem);
 
 .page-content {
-    @include animation-fade-in(background-fade-in, 0, $fade-in-animation-time);
     background-color: $page-content-background-color;
     color: white;
     margin: $page-content-padding-top auto 2rem;
@@ -20,7 +19,6 @@ $page-content-padding-top: calc($header-height + 0.5rem);
     }
 
     &__header {
-        @include animation-fade-in(header-fade-in, 50, $fade-in-animation-time);
         text-align: center;
         font-size: 2.5rem;
 
@@ -30,7 +28,7 @@ $page-content-padding-top: calc($header-height + 0.5rem);
     }
 
     > *:not(:first-child) {
-        @include animation-fade-in(page-content-fade-in, 60, $fade-in-animation-time);
+        @include animation-fade-in(page-content-fade-in, 20, $fade-in-animation-time);
     }
 
     p {
