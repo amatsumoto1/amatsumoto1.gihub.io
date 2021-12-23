@@ -4,7 +4,7 @@ import { faCaretRight, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import './index.scss';
 
 type CardProps = {
-    title: string
+    title: string,
     children?: React.ReactNode
 }
 
@@ -20,7 +20,10 @@ const Card: React.FC<CardProps> = (props: CardProps) => {
     return (
         <div className='card'>
             <div className='card__header-container'>
-                <button type='button' className='card__expand-collapse' onClick={toggleExpandCollapse}>
+                <button type='button' 
+                    className='card__expand-collapse'
+                    aria-label={expanded ? 'Collapse Section' : 'Expand Section'}
+                    onClick={toggleExpandCollapse}>
                     <FontAwesomeIcon icon={expanded ?  faCaretDown : faCaretRight} />
                 </button>
                 <h2 className='card__header'>{title}</h2>
