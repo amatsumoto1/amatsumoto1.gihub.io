@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Header from './components/Header';
 import Background from './components/Background';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
 import { Route, Routes, HashRouter as Router } from 'react-router-dom';
 
-const App = () => {
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+
+const App: React.VFC = () => {
   return (
     <Router basename='/'>
       <Background />
       <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element = {<About />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element = {<About />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </Router>
   );
