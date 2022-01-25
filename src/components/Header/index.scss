@@ -1,10 +1,10 @@
 @import '../../../styles/variables';
 
 .page-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: $header-height;
-    background-color: $header-background-color;
-    z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $header-height;
+  background-color: $header-background-color;
+  z-index: 1;
 }

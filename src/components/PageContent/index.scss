@@ -4,39 +4,39 @@
 $page-content-padding-top: calc($header-height + 0.5rem);
 
 .page-content {
-    background-color: $page-content-background-color;
-    color: white;
-    margin: $page-content-padding-top auto 2rem;
-    padding: 0.5rem 1rem;
+  background-color: $page-content-background-color;
+  color: white;
+  margin: $page-content-padding-top auto 2rem;
+  padding: 0.5rem 1rem;
 
-    @media screen and (max-width: $screen-size-sm-max) {
-        margin: 1rem;
+  @media screen and (max-width: $screen-size-sm-max) {
+    margin: 1rem;
+  }
+
+  @media screen and (min-width: $screen-size-md-min) {
+    width: 50%;
+    padding: 1rem 1.5rem 2rem;
+  }
+
+  &__header {
+    @include animation-fade-in(page-content-fade-in, 0, $fade-in-animation-time);
+    text-align: center;
+    font-size: 2.5rem;
+
+    &__text {
+      border-radius: 3px;
     }
+  }
 
-    @media screen and (min-width: $screen-size-md-min) {
-        width: 50%;
-        padding: 1rem 1.5rem 2rem;
-    }
+  > *:not(:first-child) {
+    @include animation-fade-in(page-content-fade-in, 40, $fade-in-animation-time);
+  }
 
-    &__header {
-        @include animation-fade-in(page-content-fade-in, 0, $fade-in-animation-time);
-        text-align: center;
-        font-size: 2.5rem;
-
-        &__text {
-            border-radius: 3px;
-        }
-    }
-
-    > *:not(:first-child) {
-        @include animation-fade-in(page-content-fade-in, 40, $fade-in-animation-time);
-    }
-
-    p {
-        line-height: 1.8rem;
+  p {
+    line-height: 1.8rem;
     
-        a, a:visited {
-            color: white;
-        }
+    a, a:visited {
+      color: white;
     }
+  }
 }

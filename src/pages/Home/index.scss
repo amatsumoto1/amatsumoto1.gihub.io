@@ -3,12 +3,12 @@
 
 
 .home-page {
-    padding-top: $page-top-padding;
-    height: calc(100% - $header-height - $footer-height);
-    overflow: hidden;
+  padding-top: $page-top-padding;
+  height: calc(100% - $header-height - $footer-height);
+  overflow: hidden;
 
-    &__subheader {
-        @include animation-fade-in(sub-header-fade-in, 60, $fade-in-animation-time);
-        text-align: center;
-    }
+  &__subheader {
+    @include animation-fade-in(sub-header-fade-in, 60, $fade-in-animation-time);
+    text-align: center;
+  }
 }

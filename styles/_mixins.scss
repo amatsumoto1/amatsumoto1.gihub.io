@@ -1,7 +1,7 @@
 @import './animations';
 
 @mixin animation-fade-in($animation-name, $delay-percent, $animation-time) {
-    @include delayed-fade-in($animation-name, $delay-percent);
-    $total-time: if($delay-percent==0, $animation-time, calc($animation-time * 100/(100 - $delay-percent)));
-    animation: $animation-name $total-time linear 0s 1 forwards;
+  @include delayed-fade-in($animation-name, $delay-percent);
+  $total-time: if($delay-percent==0, $animation-time, calc($animation-time * 100/(100 - $delay-percent)));
+  animation: $animation-name $total-time linear 0s 1 forwards;
 }

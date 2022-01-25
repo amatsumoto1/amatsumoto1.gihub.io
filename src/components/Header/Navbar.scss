@@ -2,22 +2,22 @@
 @import '../../../styles/variables';
 
 .header-nav {
-    ul {
-        list-style-type: none;
-        display: inline-block;
+  ul {
+    list-style-type: none;
+    display: inline-block;
+  }
+
+  &__item {
+    float: left;
+    padding-right: $header-link-right-padding;
+
+    a {
+      text-decoration: none;
+      color: $header-nav-link-color;
+
+      &:hover {
+        animation: changecolor-white-to-magenta 2s linear 0s 1 normal forwards;
+      }
     }
-
-    &__item {
-        float: left;
-        padding-right: $header-link-right-padding;
-
-        a {
-            text-decoration: none;
-            color: $header-nav-link-color;
-
-            &:hover {
-                animation: changecolor-white-to-magenta 2s linear 0s 1 normal forwards;
-            }
-        }
-    }
+  }
 }

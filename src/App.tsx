@@ -6,6 +6,7 @@ import { Route, Routes, HashRouter as Router } from 'react-router-dom';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
+const Projects = lazy(() => import('./pages/Projects'));
 
 const App: React.VFC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.VFC = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element = {<About />} />
+          <Route path='/projects' element={<Projects />} />
         </Routes>
       </Suspense>
       <Footer />

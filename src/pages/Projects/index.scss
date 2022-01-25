@@ -1,0 +1,6 @@
+@import '../../../styles/variables';
+
+.projects-page {
+  height: calc(100% - $header-height - $footer-height);
+  overflow: hidden;
+}

@@ -12,44 +12,44 @@ $card-contents-horizontal-padding: 1rem;
 $card-contents-bottom-padding: 0.5rem;
 
 .card {
-    background-color: $card-background-color;
-    color: white;
-    border: 1px solid $card-border-color;
-    border-radius: $card-border-radius;
+  background-color: $card-background-color;
+  color: white;
+  border: 1px solid $card-border-color;
+  border-radius: $card-border-radius;
 
-    &__header-container {
-        display: flex;
-        padding-right: $card-header-container-padding-right;
-        background-color: $card-header-color;
-        font-size: $card-header-font-size;
+  &__header-container {
+    display: flex;
+    padding-right: $card-header-container-padding-right;
+    background-color: $card-header-color;
+    font-size: $card-header-font-size;
+  }
+
+  &__expand-collapse {
+    background-color: $clear-color;
+    font-size: $card-header-font-size;
+    margin-left: $card-expand-collapse-margin-left;
+    border: none;
+    cursor: pointer;
+
+    svg {
+      color: white;
     }
+  }
 
-    &__expand-collapse {
-        background-color: $clear-color;
-        font-size: $card-header-font-size;
-        margin-left: $card-expand-collapse-margin-left;
-        border: none;
-        cursor: pointer;
+  &__header {
+    padding: $card-header-padding;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    display: inline;
+    flex-grow: 1;
+  }
 
-        svg {
-            color: white;
-        }
+  &__contents {
+    padding: 0 $card-contents-horizontal-padding $card-contents-bottom-padding;
+
+    &--collapsed {
+      display: none;
     }
-
-    &__header {
-        padding: $card-header-padding;
-        margin-top: 0;
-        margin-bottom: 0;
-        text-align: center;
-        display: inline;
-        flex-grow: 1;
-    }
-
-    &__contents {
-        padding: 0 $card-contents-horizontal-padding $card-contents-bottom-padding;
-
-        &--collapsed {
-            display: none;
-        }
-    }
+  }
 }

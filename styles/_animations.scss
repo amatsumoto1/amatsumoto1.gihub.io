@@ -1,46 +1,46 @@
 @import './variables';
 
 @keyframes changecolor-white-to-magenta {
-    0% {
-        color: $header-nav-link-color;
-    }
-    25% {
-        color: $header-nav-link-hover-25-pct-color;
-    }
+  0% {
+    color: $header-nav-link-color;
+  }
+  25% {
+    color: $header-nav-link-hover-25-pct-color;
+  }
 
-    50% {
-        color: $header-nav-link-hover-50-pct-color;
-    }
+  50% {
+    color: $header-nav-link-hover-50-pct-color;
+  }
 
-    75% {
-        color: $header-nav-link-hover-75-pct-color;
-    }
+  75% {
+    color: $header-nav-link-hover-75-pct-color;
+  }
 
-    100% {
-        color: $header-nav-link-hover-final-color;
-    }
+  100% {
+    color: $header-nav-link-hover-final-color;
+  }
 }
 
 @keyframes flip-text-x {
-    0% {
-        transform: rotateX(0deg);
-    }
-    100% {
-        transform: rotateX(360deg);
-    }
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
 }
 
 /* Helper Mixin */
 @mixin delayed-fade-in($animation-name, $delay-percentage) {
-    @keyframes #{$animation-name} {
-        0% {
-            opacity: 0;
-        }
-        #{$delay-percentage * 1%} {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
+  @keyframes #{$animation-name} {
+    0% {
+      opacity: 0;
     }
+    #{$delay-percentage * 1%} {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
