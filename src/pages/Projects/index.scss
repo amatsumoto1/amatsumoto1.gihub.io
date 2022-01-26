@@ -1,6 +1,6 @@
 @import '../../../styles/variables';
 
 .projects-page {
+  padding-top: $page-top-padding;
   height: calc(100% - $header-height - $footer-height);
-  overflow: hidden;
 }

@@ -4,12 +4,14 @@ $card-border-radius: 4px;
 
 $card-header-container-padding-right: 2.5rem;
 $card-header-padding: 0.5rem;
-$card-header-font-size: 1.2rem;
+$card-header-font-size: 1.1rem;
 
 $card-expand-collapse-margin-left: 1rem;
 
 $card-contents-horizontal-padding: 1rem;
 $card-contents-bottom-padding: 0.5rem;
+
+$card-collapse-animation-time: 0.5s;
 
 .card {
   background-color: $card-background-color;
@@ -28,11 +30,17 @@ $card-contents-bottom-padding: 0.5rem;
     background-color: $clear-color;
     font-size: $card-header-font-size;
     margin-left: $card-expand-collapse-margin-left;
+    width: 1.5rem;
     border: none;
     cursor: pointer;
 
-    svg {
+    &-icon {
       color: white;
+      transition: transform $card-collapse-animation-time cubic-bezier(0.52, 0.16, 0.24, 1) 0s;
+      
+      &--collapsed {
+        transform: rotate(-90deg);
+      }
     }
   }
 
@@ -47,9 +55,11 @@ $card-contents-bottom-padding: 0.5rem;
 
   &__contents {
     padding: 0 $card-contents-horizontal-padding $card-contents-bottom-padding;
-
+    transition: height $card-collapse-animation-time cubic-bezier(0.52, 0.16, 0.24, 1) 0s;
+    overflow-y: hidden;
+  
     &--collapsed {
-      display: none;
+      height: 0;
     }
   }
 }

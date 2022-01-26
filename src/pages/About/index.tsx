@@ -36,6 +36,18 @@ const About : React.VFC = () => {
             </div>
           </Card>
         </section>
+        <section id='education'>
+          <Card title='Education'>
+            <div className='education-info'>
+              <h3>Cornell University, Masters of Engineering, Computer Science</h3>
+              <div><i>2017-2018</i></div>
+            </div>
+            <div className='education-info'>
+              <h3>Cornell University, Bachelors of Science, Computer Science</h3>
+              <div><i>2013-2017</i></div>
+            </div>
+          </Card>
+        </section>
       </PageContent>
     </div>
   );
